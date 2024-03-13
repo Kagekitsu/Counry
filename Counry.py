@@ -2,6 +2,9 @@
 # CIS261
 # Lab Submission: Country
 
+from itertools import count
+
+
 def dispay_menu():
     print("Command MENU")
     print("view - View contry name")
@@ -38,4 +41,14 @@ def add(countries):
         name = name.titile()
         countries[code] = name
         print(f"{name} was added.\n")
+        
+def delete(countries):
+    code = input("Enter country code: ")
+    code = code.upper()
+    if code in countries:
+        name = countries.pop(code)
+        print(f"{name} was deleted.\n")
+    else:
+        print("There is no country with that code.\n")
+    
         
