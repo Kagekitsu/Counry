@@ -38,7 +38,8 @@ def add(countries):
         print(f"{name} is already using this code.\n")
     else:
         name = input("Enter country name: ")
-        name = name.titile()
+
+        name = name.title()
         countries[code] = name
         print(f"{name} was added.\n")
         
