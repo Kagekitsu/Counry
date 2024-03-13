@@ -5,7 +5,7 @@
 from itertools import count
 
 
-def dispay_menu():
+def display_menu():
     print("Command MENU")
     print("view - View contry name")
     print("add  - Add a country")
@@ -50,5 +50,25 @@ def delete(countries):
         print(f"{name} was deleted.\n")
     else:
         print("There is no country with that code.\n")
-    
+        
+def main():
+    countries = {"AF" : "Afghannistan", "DE" : "Germany", "US": "United States"}
+    display_menu()
+    while True:
+        command = input("Command: ")
+        command = command.lower()
+        if command == "view":
+            view(countries)
+        elif command == "add":
+            add(countries)
+        elif command == "del":
+            delete(countries)
+        elif command == "exit":
+            print("Bye!")
+            break
+        else:
+            print("Not a valid command. Please try again.\n")
+            
+if __name__ == "__main__":
+    main()
         
